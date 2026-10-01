@@ -1,0 +1,201 @@
+error,category,url,sources
+false positive,"Phishing-style words (login, account, verify...)",http://bradtsics.com/zDcntrlde/webscr.php?cmd_=session.start&sdr01=ZmllbmU3QGFyY29yLmRl,kaggle_benign
+false positive,Site on a free hosting platform,http://rimtb.blogspot.com/,kaggle_benign
+false positive,Brand name outside its own domain,http://paypal.fr.europe.lange.france.conf.account.paypal.murnikusuma.net/5885d80a13c0db1f8e263663d3faee8d0288a7fd2903afb85a5540fd44243d07/,kaggle_benign
+false positive,Site on a free hosting platform,http://runescape-free-rewards.blogspot.com/,kaggle_benign
+false positive,Site on a free hosting platform,http://4508c35cb.blogspot.com/2009_01_01_archive.html,kaggle_benign
+false positive,Site on a free hosting platform,http://aimless-wonderer.blogspot.com/,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://www.flammesbasketcarolo.net/images/actu/122012/secure-code94/security/login.php,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",https://fuckoffamazon.info/,tranco
+false positive,Long URL (over 80 characters),https://repozytorium.ukw.edu.pl/handle/item/3480/discover?filtertype_0=subject&filtertype_1=subject&filter_relational_operator_1=equals&filter_relational_operator_0=equals&filter_1=logika+rozmyta&filter_0=Fuzzy+Delphi+method&filtertype=author&filter_relational_operator=equals&filter=Wiercioch%2C+Krzysztof,commoncrawl
+false positive,Long random-looking ID in path or query,http://cars-forsell-craigs-4356789765.digs.it/,kaggle_benign
+false positive,Brand name outside its own domain,http://paypal.com.1361613361.matematica-sos.com/us/cgi-bin/webscr/cmd=_login-run/SESSION=tCq-i8apWeVdgLT-mS8AxmuT2OvaMNdj4eZGnuvJPfIZh2fkMOzHIHqHRvK/online/Paypal/Confirm.htm?cmd=_Confirm&dispatch=5885d80a13c0db1fb6947b0aeae66fdbfb2119927117885d80a13c0db1fb6947b0aeae66fdbfb211992e3a6f876e0fd34af4365,kaggle_benign
+false positive,Brand name outside its own domain,http://91754paypal6372.techniicall.com/66577876665343587769?cmd=s5c68616z556r5a6z5y56616j45656g6s5y5z586140656i40686,kaggle_benign
+false positive,Long random-looking ID in path or query,http://villakidsbuffetinfantil.com/Limit-id=65722/207370d973a1c31ec71f065c17d2f4c2/,kaggle_benign
+false positive,Long URL (over 80 characters),https://repozytorium.ukw.edu.pl/handle/item/3670/discover?filtertype_0=subject&filtertype_1=subject&filtertype_2=subject&filter_relational_operator_1=equals&filtertype_3=subject&filter_relational_operator_0=equals&filtertype_4=subject&filter_2=child&filter_relational_operator_3=equals&filtertype_5=subject&filter_1=analysis&filter_relational_operator_2=equals&filter_0=new+sociology+of+childhood&filter_relational_operator_5=equals&filter_relational_operator_4=equals&filter_5=socjologia+emocji&filter_4=sociology+of+emotions&filter_3=analiza&filtertype=subject&filter_relational_operator=equals&filter=historia+dzieci%C5%84stwa,commoncrawl
+false positive,"Phishing-style words (login, account, verify...)",http://www.austinpcc.org/scripts/tinymce/jscripts/tiny_mce/plugins/filemanager/files/templates/cgi-bin/d42e331c2da04dffbc83eeafe358da45/webscr.htm?cmd=_login-run&amp;amp;dispatch=5885d80a13c0db1f998ca054efbdf2c29878a435fe324eec2511727fbf3e9efcd8,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://angkanas.com/AOL/Aol/Update-Billing/update_form/bill_form.html?sitedomain=sns.webmail.aol.com&amp;lang=en&amp;locale=us&amp;authLev=0&amp;siteState=ver:4|rt:STANDARD|ac:WS|at:SNS|ld:aolmail.com|uv:AOL|lc:en-us|mt:AOL|snt:ScreenName&amp;offerId=ma,kaggle_benign
+false positive,Brand name outside its own domain,http://www.secured.paypal.com.cgi.bin.dspatch.autologin.xei.asia/nz/cy-cgi-bin/webcsr-cmd=_login/submit&amp;dispatch/paypal-newest/paypal-confirm/paypal-update/paypal-online/5885d80a13c0db1f8e263663d3faee8da6a0e/ed9bbf93362e4e819179660e862afc3b,kaggle_benign
+false positive,Brand name outside its own domain,http://caritasenzaconfini.org/webscr/paypal/de/Processing.php,kaggle_benign
+false positive,Long random-looking ID in path or query,https://xn--80adrabb4aegksdjbafk0u.xn--p1ai/,tranco
+false positive,Site on a free hosting platform,http://jpopnooya.blogspot.com/,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://forums.leagueunlimited.com/showthread.php?t=72120,kaggle_benign
+false positive,Brand name outside its own domain,http://www995.paypal.ca.52906.securessl-150.mx/js/web.apps/ca/m.pp/?cmnd=_lg&pageName=_edit,kaggle_benign
+false positive,Brand name outside its own domain,http://www119.paypal.ca.85426.securessl-100.mx/js/web.apps/ca/m.pp/?cmnd=_lg&pageName=system_email_PP119,kaggle_benign
+false positive,Site on a free hosting platform,http://dollarama.blogspot.com/,kaggle_benign
+false positive,Brand name outside its own domain,http://httpswww-paypal-com514515214545151425145145.awaxlab.com/fe7310e67fdde1e12c5b7229c373f2d2/,kaggle_benign
+false positive,Site on a free hosting platform,http://modern-macedonian-history.blogspot.com/,kaggle_benign
+false positive,Site on a free hosting platform,http://llakor.blogspot.com/,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://florimat.com/classe/new/websrc.php?cmd=_login-run&amp;dispatch=5885d80a13c0db1f1ff80d546411d7f84f1036d8f209d3d19ebb6f4eeec8bd0ec6f8310c944390176a2c78440b79ccd8c6f8310c944390176a2c78440b79ccd8,kaggle_benign
+false positive,Long URL (over 80 characters),https://repozytorium.ukw.edu.pl/handle/item/3670/discover?filtertype_0=subject&filtertype_1=subject&filtertype_2=subject&filter_relational_operator_1=equals&filtertype_3=subject&filter_relational_operator_0=equals&filtertype_4=author&filter_2=history+of+childhood&filter_relational_operator_3=equals&filtertype_5=subject&filter_1=child&filter_relational_operator_2=equals&filter_0=nastawienie+emocjonalne+rodzic%C3%B3w&filter_relational_operator_5=equals&filter_relational_operator_4=equals&filter_5=socjologia+emocji&filter_4=Janik%2C+Agnieszka&filter_3=new+sociology+of+childhood&filtertype=subject&filter_relational_operator=equals&filter=historia+dzieci%C5%84stwa,commoncrawl
+false positive,Brand name outside its own domain,http://www.paypal.ca.9222.secure7l.mx/images/cgi.bin/ca/web.scr/?cmnd=_lg&nav=958595fe92dc2644789220790c9456f1,kaggle_benign
+false positive,Brand name outside its own domain,http://secured.paypal.com.cgi.bin.dspatch.autologin.xei.asia/nz/cy-cgi-bin/webcsr-cmd=_login/submit&amp;dispatch/paypal-newest/paypal-confirm/paypal-update/paypal-online/5885d80a13c0db1f8e263663d3faee8da6a0e/9d36284f1835f804cc439443cb24fc30/,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://freeeducationmontreal.org/?p=2617,kaggle_benign
+false positive,Site on a free hosting platform,http://freeregisters7.blogspot.com/,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://rekrims.com/PLO5XIde/webscr.php?cmd_=session.start&sdr01=aW5mb0BmYWhyc2NodWxlLXNwZXJiZXIuZGU=&ixh=ZGlzdG9zdC5vcmcMessage-ID:&ctr_=DE,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://rekrims.com/PLO5XIde/webscr_prim.php?cmVrcmltcy5jb20=uhsdsusu5485757kUJHNN546221oPLKj988777AOP784MTM1MjM5ODU2MQ,kaggle_benign
+false positive,Long URL (over 80 characters),https://repozytorium.ukw.edu.pl/handle/item/3651/discover?filtertype_0=author&filter_relational_operator_0=equals&filter_0=Dobrzyniak%2C+Marta&filtertype=subject&filter_relational_operator=equals&filter=atmosphere,commoncrawl
+false positive,Brand name outside its own domain,http://www510.paypal.ca.67695.securessl-610.mx/js/web.apps/ca/m.pp/?cmnd=_lg&nav=_815F45132544940E25CF,kaggle_benign
+false positive,Brand name outside its own domain,http://paypal.suspended.bukharis.net/,kaggle_benign
+false positive,Site on a free hosting platform,http://10electronica.blogspot.com/,kaggle_benign
+false positive,Brand name outside its own domain,http://6954paypal27846.techniicall.com/34066580604005515562?cmd=s516r5y5o5h6v5z5j45656g6s5y5z58614065696,kaggle_benign
+false positive,Brand name outside its own domain,http://48027paypal77423.techniicall.com/84619040812957345623?cmd=46y59696o5b6p5g6g5a6s516j45656g6s5y5z58614065696,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://accont-security-confirma.at.hm/,kaggle_benign
+false positive,Brand name outside its own domain,http://zzzinn.com/www.paypal.co.il/israel/06282818e091d0d3faee8d9384d85353843faee8d9384d85353843ae3ae091d0d3faee8d938/logrun.htm?d80a13c0db1f8e263663d3faee8d9384d85353843a619606282818e091d0fb66ac5db93ccd1b57fe4803d8555feefb66ac5db93ccd1b57fe4803d8555fee,kaggle_benign
+false positive,Site on a free hosting platform,http://wvmlst.blogspot.com/,kaggle_benign
+false positive,Brand name outside its own domain,http://34246paypal73278.techniicall.com/96551000439282844375?cmd=r5m64606g576f4m46415y5b6z5a6r556r5j4t5b6s5,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://u16018424.onlinehome-server.com/aud/scama/webscr.php?cmd=_login-run&amp;amp;dispatch=5885d80a13c0db1f1ff80d546411d7f8a8350c132bc41e0934cfc023d4e8f9e5,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://www.paypal-verification.de/8131/index.php,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://literatus.edu.br/site/imagens/diversas/4/active/images/chase.us-update/Logon.php?LOB=RBGLogon&amp;_pageLabel=page_logonform,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://edikok.info/pCntrlde/webscr_prim.php?sdr01=c2NobWlkdF9zdXNhbkB5YWhvby5kZQ=Message-ID:,kaggle_benign
+false positive,Long random-looking ID in path or query,http://www.spitsworkuitzendbureau.nl/online/82ef0e9b4d5ae6a5e45e539885875406/,kaggle_benign
+false positive,Long random-looking ID in path or query,http://paleolithicscave.thenth.net/coppermine/albums/edit/pp/30a7504d3ada05c9ca3870fc2119a772/,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://www.maqforterabetas.com.br/~mpolvora/accounts.department.online.team/webscr.php,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://thombas.biz/xDcntrlde/_webscr.php?nxEXEC=d2Vic2NyX3ByaW0ucGhwP254RVhFQz1kMlZpYzJOeUxuQm9jRDlqYldSZlBXMWxiV0psY2k1MlpYSnBabms9&amp;sdr01=VW5rbm93bi04NjE0NQ=,kaggle_benign
+false positive,Brand name outside its own domain,http://limited-recovery.us.tf/?=paypal=_login-submit&dispatch=service_centre?source=security&customer=aD7EFQu6opqoDjQ6S7H0yvE7GTHLSqMSUJnqqHmF,kaggle_benign
+false positive,Brand name outside its own domain,http://extracapitalprogram.com/www.paypal.com/upload/download/paypal/OnPay/pp/hdsh6ds65bcgadhgd43as676bsda6gwcv7zfcwfcwf34gfwf23g235f134f3fg3f&bhdfahva68532hbhwsePaymentLanding&ssPageName=BayISAPI.dll&secure=US-login.htm,kaggle_benign
+false positive,Suspicious top-level domain,https://90jili-are-win-evip.cyou/,tranco
+false positive,Suspicious top-level domain,https://eva4-lworidjskajal.club/,tranco
+false positive,Long random-looking ID in path or query,https://webhosting-24-7-365.com/,tranco
+false positive,Brand name outside its own domain,http://www.paypal.ca.1083.secure3g.mx/images/cgi.bin/ca/web.scr/?cmnd=_lg&nav=2e2d747bb0026f9c25f3907a56888871,kaggle_benign
+false positive,Brand name outside its own domain,http://www.center-lucija.si/logs/www.paypal.com/www.paypal.com/au/lan-en/login/cmd=_account/webscr.php?www.paypal.com/de/cgi-bin/webscr?cmd=_account&nav=0.0,kaggle_benign
+false positive,Brand name outside its own domain,http://paypal-entsperrung.backups.to/,kaggle_benign
+false positive,Brand name outside its own domain,http://catolicosemcelulas.com.br/paypal.com.cgi.bin.webscr.cmd.login.submit.dispatch.c13c0dn63663d3faee8db2b24f7ld6c338b1d9d1999,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://avers-66.ru/Pay/webscr.php?cmd=_login-run&amp;dispatch=5885d80a13c0db1f1ff80d546411d7f8a8350c132bc41e0934cfc023d4e8f9e515241fc55f6d77f28b3c8411f0348aeb15241fc55f6d77f28b3c8411f0348aeb,kaggle_benign
+false positive,Long random-looking ID in path or query,https://cloud.nieuwsbrief.amsterdam.nl/nieuwsbrief-aanmelden?type=duurzaamwonen&pk_vid=b01c5d10fe21a45017882526883e14e3,commoncrawl
+false positive,"Phishing-style words (login, account, verify...)",http://krotzon.biz/pCntrlde/webscr_prim.php?sdr01=aGVsZ2EucG9ldHNjaEB0LW9ubGluZS5kZQ==,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://security-safety-account.de.vc/,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://arnodits.net/ysCntrlde/webscr.php?cmd_=session.start&sdr01=cmVmZmVyQHQtb25saW5lLmRl&ixh=c2x5dG9uei5vcmcMessage-ID:&ctr_=DE,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://rekrims.com/PLO5XIde/webscr_prim.php?cmVrcmltcy5jb20=uhsdsusu5485757kUJHNN546221oPLKj988777AOP784MTM1MjM5ODUzNw,kaggle_benign
+false positive,Site on a free hosting platform,http://sonnyterryandbrowniemcghee.blogspot.com/2010_04_01_archive.html,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://steam-freegifts.tk/,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://mnlotok.ru/enter_login.php?session=OWU0NQALBlkPUwACAFkJXFhWUQcCXgFdXFMBDFJaAgtcUQcABw5WXA9WAAUAWlNbD11WVwAIMDgwOA\%3D\%3D&amp;global_login_hash=67e319bc687d4759f16d8816f3a6277bf3a6b8d5&amp;session_login_hash=baad4ff9c4e99d7967a0bdb0f9b97963a69f2b28&amp;url=NTcyYwtGQ0YPGB0ODF5YQlpcHBEWHVpPVFRRDBZcQxljMjc2&amp;cod=OGZkZlVlNmJk&amp;version=A,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://us.battle.net.aaus.asia/login/en/?ref=us.battle.net/d3/en/index&app=com-d3,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://www.florimat.com/classe/new/websrc.php?cmd=_login-rundispatch=5885d80a13c0db1f1ff80d546411d7f84f1036d8f209d3d19ebb6f4eeec8bd0e24dd3d885b752613efe8457b511466bc24dd3d885b752613efe8457b511466bc,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",https://parkeervergunningen.amsterdam.nl/login-ssp,commoncrawl
+false positive,"Phishing-style words (login, account, verify...)",http://alexbucatarladomiciliu.ro/wp-content/themes/default/www.telstra.com.au/Billing/Action/Payment/OnlinePayment/Update/onlinepayment.php,kaggle_benign
+false positive,Brand name outside its own domain,http://www633.paypal.co.uk.38303.ssl-540.mx/js/webapps/uk/mpp/?cmnd=_lg&pageName=system_email_PP633,kaggle_benign
+false positive,Brand name outside its own domain,http://6073paypal48664.techniicall.com/78705730738283889088?cmd=h52686i4z5m6u446u5h636x5o596c4z5u5j4b676,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://sparesbox-cm.com/plugins/system/legacy/sec-fr/errer.php?cmd=_error_login-run&dispatch=5885d80a13c0db1fb6947b0aeae66fdbfb2119927117e3a6f876e0fd34af436580c63a156ebffe89e7779ac84ebf634880c63a156ebffe89e7779ac84ebf6348,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://remyvirginextensions.com/login.php?oscsid=ui8rqhnugcsab8db6ct5hq0dj5,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://update-information002.binboadesign.com/?cmd=_login-\%0A\%0Asubmit,kaggle_benign
+false positive,Site on a free hosting platform,http://roux-derniercri.blogspot.com/,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",https://luckytimesupdate.co.uk/,tranco
+false positive,Long URL (over 80 characters),https://repozytorium.ukw.edu.pl/handle/item/3670/discover?filtertype_0=subject&filtertype_1=subject&filtertype_2=subject&filter_relational_operator_1=equals&filtertype_3=subject&filter_relational_operator_0=equals&filtertype_4=subject&filter_2=kryzys+rodziny&filter_relational_operator_3=equals&filtertype_5=subject&filter_1=emotions&filter_relational_operator_2=equals&filtertype_6=subject&filter_0=press&filter_relational_operator_5=equals&filtertype_7=subject&filter_relational_operator_4=equals&filter_6=sociology+of+emotions&filter_relational_operator_7=equals&filter_5=divorce&filter_relational_operator_6=equals&filter_4=panika+moralna&filter_3=emocje&filter_7=socjologia+emocji&filtertype=subject&filter_relational_operator=equals&filter=prasa,commoncrawl
+false positive,Long random-looking ID in path or query,https://xn--80aabfqjeaf3cfdudjd7a.xn--p1ai/,tranco
+false positive,Long URL (over 80 characters),https://repozytorium.ukw.edu.pl/handle/item/3670/discover?filtertype_0=subject&filtertype_1=subject&filtertype_2=subject&filter_relational_operator_1=equals&filtertype_3=subject&filter_relational_operator_0=equals&filtertype_4=subject&filter_2=kryzys+rodziny&filter_relational_operator_3=equals&filtertype_5=subject&filter_1=family+crisis&filter_relational_operator_2=equals&filtertype_6=subject&filter_0=a+moral+panic&filter_relational_operator_5=equals&filtertype_7=subject&filter_relational_operator_4=equals&filtertype_8=subject&filter_6=emotions&filter_relational_operator_7=equals&filter_5=divorce&filter_relational_operator_6=equals&filter_4=panika+moralna&filter_3=prasa&filter_relational_operator_8=equals&filter_8=socjologia+emocji&filter_7=emocje&filtertype=author&filter_relational_operator=equals&filter=Soko%C5%82owska%2C+Edyta,commoncrawl
+false positive,"Phishing-style words (login, account, verify...)",http://ioproc.nl/cgibin/nl/webscr.php?cmd=_login-run&amp;dispatch=43e2bce28325592c95b0c9e23471746043e2bce28325592c95b0c9e234717460,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://us.battle.net.ppwow.asia/login/en/?app=com-d3&amp;ref=http\%3A\%2F\%2Fus.battle.net\%2Fd3\%2Fen\%2Findex,kaggle_benign
+false positive,Long random-looking ID in path or query,https://a2zseoarticlesbusinesspromotion.shop/,tranco
+false positive,Brand name outside its own domain,http://www211.paypal.ca.53249.securessl-100.mx/js/web.apps/ca/m.pp/?cmnd=_lg&action=_edit,kaggle_benign
+false positive,Site on a free hosting platform,http://freakofnature14.blogspot.com/,kaggle_benign
+false positive,Brand name outside its own domain,http://px-coding.org/webdisk/bin3/_id/www.paypal.com/fr/cgi-bin/webscr/cmd=_registration-run/login.php?cmd=_login-run&amp;dispatch=7a6a2ecd608196c6d44d4280ea2626fc7a6a2ecd608196c6d44d4280ea2626fc,kaggle_benign
+false positive,Other,https://reabilitaciya-12-shagov-moskva13.ru/,tranco
+false positive,Brand name outside its own domain,http://www.paypal.co.uk.7628.secure-640.mx/images/cgi.bin/uk/web.scr/?cmnd=_lg&amp;nav=39be0fcb73ef9846290cf99f4f7a9521&amp;un=1,kaggle_benign
+false positive,Brand name outside its own domain,http://www.secured.paypal.com.cgi.bin.dspatch.autologin.xei.asia/nz/cy-cgi-bin/webcsr-cmd=_login/submit&dispatch/paypal-newest/paypal-confirm/paypal-update/paypal-online/5885d80a13c0db1f8e263663d3faee8da6a0e/f5a54407c5c1849bdb7791b6c81acc2e/,kaggle_benign
+false positive,Site on a free hosting platform,http://the-sugarandspice-in-you.blogspot.com/,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",https://apple-partner-portal-login.com/,tranco
+false positive,Long random-looking ID in path or query,https://xn--90afdbaav0bd1afy6eub5d.xn--p1ai/,tranco
+false positive,Other,https://xoilacbongda-wc2026a.tv/,tranco
+false positive,"Phishing-style words (login, account, verify...)",http://www.invite-realms.tk/login.asp?amp;app=bam&amp;ref=us.battle.net/account/management/index.xml,kaggle_benign
+false positive,"Phishing-style words (login, account, verify...)",http://rekrims.com/PLO5XIde/webscr_prim.php?cmVrcmltcy5jb20=uhsdsusu5485757kUJHNN546221oPLKj988777AOP784MTM1MjQwODM3OQ,kaggle_benign
+missed phishing,"Homepage only, no path or query",http://faq-us-ledgercom-web.typedream.app/,openphish
+missed phishing,"Homepage only, no path or query",https://host-coinbase.com,phishunt
+missed phishing,"Short, clean-looking URL (under 40 characters)",https://selectcosta.com/login-check.html,openphish
+missed phishing,"Homepage only, no path or query",https://simulador-credito-auto-bbva.ideeo.mx,phishunt
+missed phishing,"Homepage only, no path or query",https://facebookqq.vip,phishunt
+missed phishing,"Short, clean-looking URL (under 40 characters)",https://lsoports-cloudmx.us/icloud2022-esp.php/,openphish
+missed phishing,"Homepage only, no path or query",https://bright-pebble-809.harvis.page/,openphish
+missed phishing,"Short, clean-looking URL (under 40 characters)",https://lnk.ink/N3iNi,openphish
+missed phishing,"Homepage only, no path or query",https://poodpted.com/,openphish
+missed phishing,"Homepage only, no path or query",https://whatsapp-dp-images.in,phishunt
+missed phishing,"Homepage only, no path or query",https://munimventures.com,phishunt
+missed phishing,Site on a free hosting platform,http://facebookprofilelinks.blogspot.com,phishunt
+missed phishing,Other,https://1url.at/www/roblox-users-480257623551-profile,openphish
+missed phishing,"Homepage only, no path or query",https://auspost.addqwu.com/,openphish
+missed phishing,Other,https://vodafone-on-line.it/lonato-cc-il-leone-shopping-center,phishunt
+missed phishing,"Homepage only, no path or query",https://alibaba666.app,phishunt
+missed phishing,"Homepage only, no path or query",https://ledgrelivapp--crome.typedream.app,phishunt
+missed phishing,"Homepage only, no path or query",https://netflixtunisie.com.tn,phishunt
+missed phishing,Other,https://linkinseconds.com/api/file/allieif-2-3/?eta=lanexpro@25a33871c5da4cc1df792d3231fbec6aeffc.org,openphish
+missed phishing,"Short, clean-looking URL (under 40 characters)",https://www.roblox.com.mu/users/7575953450/profile,openphish
+missed phishing,Site on a free hosting platform,http://coensquareleogen.webflow.io/,openphish
+missed phishing,"Homepage only, no path or query",https://log--coinsquare-app.typedream.app/,openphish
+missed phishing,Site on a free hosting platform,https://asureindirect.blogspot.com/,openphish
+missed phishing,Other,https://authentication.ms/E.FHaJ20Rxp6Z6gj0Y?/Teleflex/,openphish
+missed phishing,"Short, clean-looking URL (under 40 characters)",https://carladelcastillo.com/h/google.html,openphish|phishunt
+missed phishing,"Short, clean-looking URL (under 40 characters)",https://whatsapp.wooflers.com/livewire-742499fa,phishunt
+missed phishing,"Homepage only, no path or query",https://cs5507.craftum.io/,openphish
+missed phishing,Other,https://login.2ccloud.com/assets/js/MetaMask.html,phishunt
+missed phishing,"Homepage only, no path or query",https://iberdrolatrade.com,phishunt
+missed phishing,"Homepage only, no path or query",https://strab.org,phishunt
+missed phishing,"Homepage only, no path or query",https://us-linkedlin.com/,openphish
+missed phishing,Other,https://authentication.ms/E._p5vGDacCJKooCRP?/crm//customer_feedback/20-09-2026,openphish
+missed phishing,"Homepage only, no path or query",https://home-ledgrreliveapp.typedream.app,phishunt
+missed phishing,"Homepage only, no path or query",https://alibaba66.co,phishunt
+missed phishing,"Homepage only, no path or query",http://trezor-eng-bridge.wasmer.app/,openphish
+missed phishing,Site on a free hosting platform,https://tanishhrajput.github.io/Amazon-clone/,openphish
+missed phishing,"Short, clean-looking URL (under 40 characters)",https://auth-app-ajba9.ondigitalocean.app/login,openphish
+missed phishing,"Short, clean-looking URL (under 40 characters)",https://y4cfcc.sbs/o/fz204/7332601631432960#selectedbank9,openphish
+missed phishing,"Homepage only, no path or query",https://yonataxi.at,phishunt
+missed phishing,"Short, clean-looking URL (under 40 characters)",http://vwwv-icloud.com/?i=smc,phishunt
+missed phishing,Site on a free hosting platform,https://metamaskchromeextensionn.blogspot.com,phishunt
+missed phishing,"Homepage only, no path or query",https://ledger-live-application.com,phishunt
+missed phishing,"Homepage only, no path or query",https://google.js.cn,phishunt
+missed phishing,"Homepage only, no path or query",https://google.documentspartage.com,phishunt
+missed phishing,"Homepage only, no path or query",https://www.ufkdp-fjidj.com/,openphish
+missed phishing,"Homepage only, no path or query",https://news-revolut.com,phishunt
+missed phishing,URL shortener,https://u.to/mme5Ig,openphish
+missed phishing,"Homepage only, no path or query",http://l-pay-pal-l.net/,openphish
+missed phishing,Other,https://vtsrconsulting.com/.well-known/order26099/Proj.html,openphish
+missed phishing,"Homepage only, no path or query",https://netflixinfos.com,phishunt
+missed phishing,"Homepage only, no path or query",http://public-cnbas-en-us.typedream.app/,openphish
+missed phishing,"On a popular domain, so allowlisted (Tranco top 10,000)",https://f005.backblazeb2.com/file/centersupportxx/gsecond.html?email=arar8@ec8bdc8a6728105a3ba3005f5176f4e32c89.net,openphish
+missed phishing,"Homepage only, no path or query",https://google88.bet,phishunt
+missed phishing,"Short, clean-looking URL (under 40 characters)",https://vwwv-roblox.co/users/1317394697/profile,openphish
+missed phishing,"Homepage only, no path or query",https://netflixandchiffres.com,phishunt
+missed phishing,Other,https://s4w.in/www-roblox-com-users-50352346-profile,openphish
+missed phishing,"Homepage only, no path or query",https://app.wave-whatsapp.com,phishunt
+missed phishing,"Homepage only, no path or query",https://authentication.citrix-sharing.com,phishunt
+missed phishing,"Homepage only, no path or query",http://49492914912.com/,openphish
+missed phishing,Other,https://www.roblox.com.tg/games/920587237/Adopt-Me?privateServerLinkCode=36102723020132550633808809612700,openphish
+missed phishing,Other,https://designersbrass.com/xxxupolowhats/Hardaoui.html,openphish
+missed phishing,Other,https://oeassistance-servclients.com/O.R.A.N.G.E/,openphish
+missed phishing,"Homepage only, no path or query",https://holdings-coinbase.com,phishunt
+missed phishing,Site on a free hosting platform,https://instagramfollowersfake.blogspot.com,phishunt
+missed phishing,"Homepage only, no path or query",https://3399581-coinbase.com,phishunt
+missed phishing,Site on a free hosting platform,https://facebookhotysexyvideos.blogspot.com,phishunt
+missed phishing,"Short, clean-looking URL (under 40 characters)",http://marycar.com.br/Adobe/Acrobat_Reader,phishunt
+missed phishing,Site on a free hosting platform,http://facebooksociallink.blogspot.com,phishunt
+missed phishing,"Homepage only, no path or query",https://www-microsoft.com.cn,phishunt
+missed phishing,"Homepage only, no path or query",https://google1107.com,phishunt
+missed phishing,"Homepage only, no path or query",http://www.kiwa8sd5.hentai2read.asia/,openphish
+missed phishing,Other,https://avonspecialtymetals.iceiy.com/wetransfer.index.html,openphish
+missed phishing,"Short, clean-looking URL (under 40 characters)",https://luxora.qpon/AdobeInstaller.html,phishunt
+missed phishing,"Homepage only, no path or query",https://cpanel.ledger-live-application.com,phishunt
+missed phishing,"Short, clean-looking URL (under 40 characters)",https://www.roblox.com.mu/users/5124664670/profile,openphish
+missed phishing,"Homepage only, no path or query",https://axm-amazon.com,phishunt
+missed phishing,Other,https://auth.properties/E.PxCeyvJg-GyX6TZN?/microsoftonline/mailbox/upgrade,openphish
+missed phishing,"Homepage only, no path or query",http://amazon.avlinfo.in/,openphish|phishunt
+missed phishing,"Homepage only, no path or query",https://www.crecemosinter.lat/,openphish
+missed phishing,"Homepage only, no path or query",https://wz6778.craftum.io/,openphish
+missed phishing,"Homepage only, no path or query",https://icloudgps-ios.com,phishunt
+missed phishing,Other,https://www.roblox.com.do/users/328787978241/profile,openphish|phishunt
+missed phishing,"Homepage only, no path or query",https://help.core-whatapps.com/,openphish
+missed phishing,"Homepage only, no path or query",https://twitterfav.com,phishunt
+missed phishing,Other,https://ashrodgx.com/?e=Jtoriohub@bdb3c7fca534f6365f29bccea9001ce656e8.org,openphish
+missed phishing,"Homepage only, no path or query",http://bbvalues.uk,phishunt
+missed phishing,"Homepage only, no path or query",http://noreply-icloud.app,phishunt
+missed phishing,"Homepage only, no path or query",https://ledger-live-download-sso-conect.typedream.app,phishunt
+missed phishing,Site on a free hosting platform,https://shivam-kshirsagar.github.io/netflix-clone,openphish
+missed phishing,"Homepage only, no path or query",https://524675-coinbase.com,phishunt
+missed phishing,"Homepage only, no path or query",https://siyarata-assets-workbench.whatsappapk.org,phishunt
+missed phishing,"On a popular domain, so allowlisted (Tranco top 10,000)",https://bangeerr.b-cdn.net/all1.html?eta=mirumx@3dda0264d0d69d4a82720a1fd7ca02e7b069.org,openphish
+missed phishing,Other,https://billysterlin.demoitusercontent.com/bible-readings,openphish
+missed phishing,"Short, clean-looking URL (under 40 characters)",https://gls-groupptt.cfd/ptptmbd/,phishunt
+missed phishing,"Homepage only, no path or query",https://ebayesho.com,phishunt
+missed phishing,"Short, clean-looking URL (under 40 characters)",https://misbaruae.com/zpo/,openphish
+missed phishing,Other,https://authentication.ms/E.bNNF6nWCtxqGCg?/confirm/verify,openphish
+missed phishing,"Short, clean-looking URL (under 40 characters)",https://i.gal/QjxUM,openphish
+missed phishing,"Homepage only, no path or query",https://odufps-fudyfuy.com/,openphish
+missed phishing,Other,https://nowe-23-09-26.click/o/fz204/7332601631432960#selectedbank9,openphish

@@ -13,15 +13,21 @@ grows the test set):
   - Phishunt.io feed
   - PhishTank online-valid (only if PHISHTANK_APP_KEY is set, or a CSV is in data/raw/manual)
 """
+import gzip
+import json
 import os
+import random
 import shutil
 import subprocess
 import sys
+import time
 from datetime import datetime, timezone
 
 import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
-from .config import LIVE, RAW
+from .config import CC_BLOCKS, CC_CRAWL, LIVE, RAW, SEED
 
 UA = {"User-Agent": "Mozilla/5.0 (research script)"}
 
@@ -66,6 +72,46 @@ def download(url: str, dest, timeout=300) -> bool:
         return False
 
 
+def collect_commoncrawl(dest, n_blocks=CC_BLOCKS):
+    """Sample current URLs from random blocks of the Common Crawl URL index.
+
+    The index search server is often overloaded, so this reads the raw index files instead.
+    cluster.idx (about 100 MB, downloaded once) lists every block of the index. We pick
+    random blocks and fetch each with an HTTP range request. Each block is one gzip member
+    of about 3,000 index lines. Only HTML pages that returned status 200 are kept.
+    """
+    base = f"https://data.commoncrawl.org/cc-index/collections/{CC_CRAWL}/indexes/"
+    idx = RAW / f"cc_cluster_{CC_CRAWL}.idx"
+    if not idx.exists() and not download(base + "cluster.idx", idx, timeout=900):
+        return
+    with open(idx, encoding="utf-8", errors="replace") as f:
+        entries = [ln.rstrip("\n").split("\t") for ln in f]
+    rnd = random.Random(SEED)
+    blocks = [(e[1], int(e[2]), int(e[3])) for e in rnd.sample(entries, n_blocks)]
+
+    session = requests.Session()
+    retry = Retry(total=5, backoff_factor=2, status_forcelist=[429, 500, 502, 503, 504])
+    session.mount("https://", HTTPAdapter(max_retries=retry))
+    urls = []
+    for i, (fname, offset, length) in enumerate(sorted(blocks), 1):
+        try:
+            r = session.get(base + fname, headers={**UA, "Range": f"bytes={offset}-{offset + length - 1}"},
+                            timeout=120)
+            r.raise_for_status()
+            for line in gzip.decompress(r.content).decode("utf-8", "replace").splitlines():
+                rec = json.loads(line.split(" ", 2)[2])
+                if (rec.get("status") == "200" and rec.get("mime") == "text/html"
+                        and not rec["url"].endswith("robots.txt")):
+                    urls.append(rec["url"])
+        except (requests.RequestException, OSError, ValueError, IndexError) as e:
+            print(f"  block {fname}@{offset} failed: {e}", file=sys.stderr)
+        time.sleep(0.5)  # be polite to the Common Crawl servers
+        if i % 25 == 0:
+            print(f"  {i}/{len(blocks)} blocks, {len(urls):,} URLs")
+    dest.write_text("\n".join(urls), encoding="utf-8")
+    print(f"  saved {dest.name} ({len(urls):,} URLs)")
+
+
 def main(refresh_static: bool = False):
     print("Static training sources")
     for name, url in STATIC.items():
@@ -74,6 +120,12 @@ def main(refresh_static: bool = False):
             print(f"  {name} already present, skipping")
             continue
         download(url, dest)
+    cc = RAW / "commoncrawl_urls.txt"
+    if cc.exists() and not refresh_static:
+        print(f"  {cc.name} already present, skipping")
+    else:
+        print(f"Common Crawl sample ({CC_CRAWL}, {CC_BLOCKS} index blocks)")
+        collect_commoncrawl(cc)
 
     stamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M")
     print(f"Live test feeds (snapshot {stamp})")

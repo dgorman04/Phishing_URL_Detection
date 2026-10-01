@@ -4,13 +4,14 @@ Usage:
     python -m src.predict "http://paypal-login.verify-account.example.xyz/signin.php" https://github.com/
 """
 import sys
+from urllib.parse import urlsplit
 
 import joblib
 import pandas as pd
 
 from .config import ROOT
 from .features import extract
-from .urlutils import clean_url
+from .urlutils import clean_url, on_free_hosting, registered_domain
 
 
 def explain(model, features, row: pd.DataFrame) -> list[str]:
@@ -31,15 +32,21 @@ def explain(model, features, row: pd.DataFrame) -> list[str]:
 def main(urls):
     bundle = joblib.load(ROOT / "models" / "decision_tree.joblib")
     model, features = bundle["model"], bundle["features"]
+    thr, allow = bundle.get("threshold", 0.5), set(bundle.get("allowlist", []))
     for raw in urls:
         url, reason = clean_url(raw)
         if url is None:
             print(f"{raw}\n  malformed URL ({reason})\n")
             continue
+        domain = registered_domain(url)
+        host = (urlsplit(url).hostname or "").removeprefix("www.")
+        if domain in allow and not on_free_hosting(host):
+            print(f"{url}\n  legitimate ({domain} is a top-ranked domain on the allowlist)\n")
+            continue
         row = pd.DataFrame([extract(url)])[features]
         p = model.predict_proba(row)[0, 1]
-        verdict = "PHISHING" if p >= 0.5 else "legitimate"
-        print(f"{url}\n  {verdict} (phishing probability {p:.2f})")
+        verdict = "PHISHING" if p >= thr else "legitimate"
+        print(f"{url}\n  {verdict} (phishing score {p:.2f}, threshold {thr:.2f})")
         for s in explain(model, features, row):
             print(f"    because {s}")
         print()

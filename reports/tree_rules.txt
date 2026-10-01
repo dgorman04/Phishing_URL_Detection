@@ -1,811 +1,292 @@
-|--- entropy <= 3.64
-|   |--- num_subdomains <= 0.50
-|   |   |--- path_depth <= 0.50
-|   |   |   |--- host_length <= 20.50
-|   |   |   |   |--- host_hyphens <= 0.50
-|   |   |   |   |   |--- url_length <= 12.50
-|   |   |   |   |   |   |--- url_length <= 8.50
-|   |   |   |   |   |   |   |--- digit_ratio <= 0.13
-|   |   |   |   |   |   |   |   |--- host_length <= 7.50
-|   |   |   |   |   |   |   |   |   |--- entropy <= 2.42
+|--- host_length <= 21.50
+|   |--- suspicious_word_count <= 0.50
+|   |   |--- longest_token <= 19.50
+|   |   |   |--- free_hosting <= 0.50
+|   |   |   |   |--- suspicious_tld <= 0.50
+|   |   |   |   |   |--- num_subdomains <= 0.50
+|   |   |   |   |   |   |--- num_hyphens <= 2.50
+|   |   |   |   |   |   |   |--- path_length <= 3.50
+|   |   |   |   |   |   |   |   |--- host_hyphens <= 0.50
+|   |   |   |   |   |   |   |   |   |--- longest_token <= 5.50
 |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- entropy >  2.42
-|   |   |   |   |   |   |   |   |   |   |--- entropy <= 2.70
+|   |   |   |   |   |   |   |   |   |--- longest_token >  5.50
+|   |   |   |   |   |   |   |   |   |   |--- digit_ratio <= 0.42
 |   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |   |   |--- entropy >  2.70
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- host_length >  7.50
-|   |   |   |   |   |   |   |   |   |--- entropy <= 2.88
-|   |   |   |   |   |   |   |   |   |   |--- entropy <= 2.62
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- entropy >  2.62
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- entropy >  2.88
+|   |   |   |   |   |   |   |   |   |   |--- digit_ratio >  0.42
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- host_hyphens >  0.50
+|   |   |   |   |   |   |   |   |   |--- host_length <= 13.50
 |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- digit_ratio >  0.13
-|   |   |   |   |   |   |   |   |--- url_length <= 7.50
-|   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- url_length >  7.50
-|   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |--- url_length >  8.50
-|   |   |   |   |   |   |   |--- num_dots <= 1.50
-|   |   |   |   |   |   |   |   |--- digit_ratio <= 0.38
-|   |   |   |   |   |   |   |   |   |--- digit_ratio <= 0.10
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy <= 2.45
+|   |   |   |   |   |   |   |   |   |--- host_length >  13.50
+|   |   |   |   |   |   |   |   |   |   |--- host_hyphens <= 1.50
 |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy >  2.45
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 11
-|   |   |   |   |   |   |   |   |   |--- digit_ratio >  0.10
-|   |   |   |   |   |   |   |   |   |   |--- entropy <= 3.44
+|   |   |   |   |   |   |   |   |   |   |--- host_hyphens >  1.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- path_length >  3.50
+|   |   |   |   |   |   |   |   |--- ext_html <= 0.50
+|   |   |   |   |   |   |   |   |   |--- special_char_count <= 1.50
+|   |   |   |   |   |   |   |   |   |   |--- digit_ratio <= 0.01
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |   |--- digit_ratio >  0.01
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 8
+|   |   |   |   |   |   |   |   |   |--- special_char_count >  1.50
+|   |   |   |   |   |   |   |   |   |   |--- has_at <= 0.50
 |   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
-|   |   |   |   |   |   |   |   |   |   |--- entropy >  3.44
+|   |   |   |   |   |   |   |   |   |   |--- has_at >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- ext_html >  0.50
+|   |   |   |   |   |   |   |   |   |--- host_digits <= 4.50
+|   |   |   |   |   |   |   |   |   |   |--- brand_outside_domain <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- brand_outside_domain >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- host_digits >  4.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num_hyphens >  2.50
+|   |   |   |   |   |   |   |--- path_depth <= 6.50
+|   |   |   |   |   |   |   |   |--- digit_ratio <= 0.32
+|   |   |   |   |   |   |   |   |   |--- host_hyphens <= 0.50
+|   |   |   |   |   |   |   |   |   |   |--- num_dots <= 2.50
 |   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- digit_ratio >  0.38
-|   |   |   |   |   |   |   |   |   |--- digit_ratio <= 0.45
+|   |   |   |   |   |   |   |   |   |   |--- num_dots >  2.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- host_hyphens >  0.50
 |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- digit_ratio >  0.45
-|   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- num_dots >  1.50
-|   |   |   |   |   |   |   |   |--- url_length <= 10.50
-|   |   |   |   |   |   |   |   |   |--- host_entropy <= 2.82
-|   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- host_entropy >  2.82
-|   |   |   |   |   |   |   |   |   |   |--- entropy <= 2.93
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- entropy >  2.93
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- url_length >  10.50
-|   |   |   |   |   |   |   |   |   |--- entropy <= 2.85
-|   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- entropy >  2.85
-|   |   |   |   |   |   |   |   |   |   |--- host_length <= 11.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |   |   |--- host_length >  11.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
-|   |   |   |   |   |--- url_length >  12.50
-|   |   |   |   |   |   |--- host_digits <= 0.50
-|   |   |   |   |   |   |   |--- suspicious_word_count <= 0.50
-|   |   |   |   |   |   |   |   |--- url_length <= 17.50
-|   |   |   |   |   |   |   |   |   |--- host_entropy <= 3.62
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy <= 2.79
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy >  2.79
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 13
-|   |   |   |   |   |   |   |   |   |--- host_entropy >  3.62
-|   |   |   |   |   |   |   |   |   |   |--- host_length <= 15.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- host_length >  15.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- url_length >  17.50
-|   |   |   |   |   |   |   |   |   |--- num_dots <= 1.50
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy <= 3.41
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy >  3.41
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
-|   |   |   |   |   |   |   |   |   |--- num_dots >  1.50
-|   |   |   |   |   |   |   |   |   |   |--- url_length <= 19.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
-|   |   |   |   |   |   |   |   |   |   |--- url_length >  19.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- suspicious_word_count >  0.50
+|   |   |   |   |   |   |   |   |--- digit_ratio >  0.32
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- path_depth >  6.50
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- num_subdomains >  0.50
+|   |   |   |   |   |   |--- path_length <= 2.50
+|   |   |   |   |   |   |   |--- query_length <= 4.50
+|   |   |   |   |   |   |   |   |--- url_length <= 16.50
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- url_length >  16.50
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- query_length >  4.50
 |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |--- host_digits >  0.50
-|   |   |   |   |   |   |   |--- num_dots <= 1.50
-|   |   |   |   |   |   |   |   |--- url_length <= 14.50
+|   |   |   |   |   |   |--- path_length >  2.50
+|   |   |   |   |   |   |   |--- brand_outside_domain <= 0.50
+|   |   |   |   |   |   |   |   |--- host_hyphens <= 0.50
 |   |   |   |   |   |   |   |   |   |--- digit_ratio <= 0.26
-|   |   |   |   |   |   |   |   |   |   |--- digit_ratio <= 0.15
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |   |   |--- digit_ratio >  0.15
+|   |   |   |   |   |   |   |   |   |   |--- host_digits <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- host_digits >  0.50
 |   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
 |   |   |   |   |   |   |   |   |   |--- digit_ratio >  0.26
-|   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- url_length >  14.50
-|   |   |   |   |   |   |   |   |   |--- host_digits <= 2.50
-|   |   |   |   |   |   |   |   |   |   |--- digit_ratio <= 0.12
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |   |   |--- digit_ratio >  0.12
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- host_digits >  2.50
-|   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- num_dots >  1.50
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |--- host_hyphens >  0.50
-|   |   |   |   |   |--- host_length <= 13.50
-|   |   |   |   |   |   |--- host_length <= 12.50
-|   |   |   |   |   |   |   |--- host_length <= 11.50
-|   |   |   |   |   |   |   |   |--- entropy <= 3.22
-|   |   |   |   |   |   |   |   |   |--- host_entropy <= 3.06
-|   |   |   |   |   |   |   |   |   |   |--- entropy <= 2.92
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- entropy >  2.92
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- host_entropy >  3.06
-|   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- entropy >  3.22
-|   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- host_length >  11.50
-|   |   |   |   |   |   |   |   |--- host_entropy <= 3.33
-|   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- host_entropy >  3.33
-|   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |--- host_length >  12.50
-|   |   |   |   |   |   |   |--- host_entropy <= 3.29
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- host_entropy >  3.29
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |--- host_length >  13.50
-|   |   |   |   |   |   |--- host_digits <= 0.50
-|   |   |   |   |   |   |   |--- host_hyphens <= 1.50
-|   |   |   |   |   |   |   |   |--- host_entropy <= 3.41
-|   |   |   |   |   |   |   |   |   |--- host_length <= 14.50
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy <= 3.28
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy >  3.28
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- host_length >  14.50
-|   |   |   |   |   |   |   |   |   |   |--- entropy <= 3.37
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
-|   |   |   |   |   |   |   |   |   |   |--- entropy >  3.37
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- host_entropy >  3.41
-|   |   |   |   |   |   |   |   |   |--- host_length <= 18.50
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy <= 3.53
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy >  3.53
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |   |--- host_length >  18.50
-|   |   |   |   |   |   |   |   |   |   |--- entropy <= 3.54
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- entropy >  3.54
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- host_hyphens >  1.50
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |--- host_digits >  0.50
-|   |   |   |   |   |   |   |--- class: 0
-|   |   |   |--- host_length >  20.50
-|   |   |   |   |--- num_dots <= 1.50
-|   |   |   |   |   |--- host_hyphens <= 0.50
-|   |   |   |   |   |   |--- entropy <= 3.32
-|   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |--- entropy >  3.32
-|   |   |   |   |   |   |   |--- host_length <= 25.50
-|   |   |   |   |   |   |   |   |--- entropy <= 3.49
-|   |   |   |   |   |   |   |   |   |--- entropy <= 3.41
-|   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- entropy >  3.41
-|   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- entropy >  3.49
-|   |   |   |   |   |   |   |   |   |--- entropy <= 3.57
-|   |   |   |   |   |   |   |   |   |   |--- entropy <= 3.54
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- entropy >  3.54
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- entropy >  3.57
-|   |   |   |   |   |   |   |   |   |   |--- url_length <= 22.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- url_length >  22.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- host_length >  25.50
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |--- host_hyphens >  0.50
-|   |   |   |   |   |   |--- entropy <= 3.50
-|   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |--- entropy >  3.50
-|   |   |   |   |   |   |   |--- entropy <= 3.57
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- host_hyphens >  0.50
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- brand_outside_domain >  0.50
 |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- entropy >  3.57
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |--- num_dots >  1.50
-|   |   |   |   |   |--- host_hyphens <= 0.50
-|   |   |   |   |   |   |--- host_length <= 25.50
-|   |   |   |   |   |   |   |--- url_length <= 23.50
-|   |   |   |   |   |   |   |   |--- entropy <= 3.51
+|   |   |   |   |--- suspicious_tld >  0.50
+|   |   |   |   |   |--- num_subdomains <= 0.50
+|   |   |   |   |   |   |--- path_length <= 1.00
+|   |   |   |   |   |   |   |--- num_hyphens <= 0.50
+|   |   |   |   |   |   |   |   |--- letter_ratio <= 0.92
 |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- entropy >  3.51
-|   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- url_length >  23.50
+|   |   |   |   |   |   |   |   |--- letter_ratio >  0.92
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num_hyphens >  0.50
 |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- host_length >  25.50
-|   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |--- host_hyphens >  0.50
-|   |   |   |   |   |   |--- host_entropy <= 3.57
-|   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- host_entropy >  3.57
-|   |   |   |   |   |   |   |--- class: 1
-|   |   |--- path_depth >  0.50
-|   |   |   |--- is_shortener <= 0.50
-|   |   |   |   |--- host_entropy <= 2.43
-|   |   |   |   |   |--- digit_count <= 0.50
+|   |   |   |   |   |   |--- path_length >  1.00
+|   |   |   |   |   |   |   |--- url_length <= 28.50
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- url_length >  28.50
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- num_subdomains >  0.50
 |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |--- digit_count >  0.50
+|   |   |   |--- free_hosting >  0.50
+|   |   |   |   |--- ext_html <= 0.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- ext_html >  0.50
+|   |   |   |   |   |--- digit_count <= 5.50
 |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |--- host_entropy >  2.43
-|   |   |   |   |   |--- host_length <= 11.50
-|   |   |   |   |   |   |--- digit_count <= 6.50
-|   |   |   |   |   |   |   |--- digit_ratio <= 0.05
-|   |   |   |   |   |   |   |   |--- entropy <= 3.23
-|   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- entropy >  3.23
-|   |   |   |   |   |   |   |   |   |--- path_length <= 6.50
-|   |   |   |   |   |   |   |   |   |   |--- entropy <= 3.40
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- entropy >  3.40
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- path_length >  6.50
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy <= 2.78
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy >  2.78
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- digit_ratio >  0.05
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- digit_count >  6.50
-|   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |--- host_length >  11.50
-|   |   |   |   |   |   |--- host_length <= 18.50
-|   |   |   |   |   |   |   |--- path_length <= 3.50
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- path_length >  3.50
-|   |   |   |   |   |   |   |   |--- path_length <= 7.50
-|   |   |   |   |   |   |   |   |   |--- entropy <= 3.53
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- entropy >  3.53
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- path_length >  7.50
-|   |   |   |   |   |   |   |   |   |--- entropy <= 3.52
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- entropy >  3.52
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- host_length >  18.50
-|   |   |   |   |   |   |   |--- class: 1
-|   |   |   |--- is_shortener >  0.50
-|   |   |   |   |--- url_length <= 13.50
-|   |   |   |   |   |--- class: 1
-|   |   |   |   |--- url_length >  13.50
-|   |   |   |   |   |--- class: 1
-|   |--- num_subdomains >  0.50
-|   |   |--- url_length <= 14.50
-|   |   |   |--- host_entropy <= 3.06
-|   |   |   |   |--- class: 0
-|   |   |   |--- host_entropy >  3.06
-|   |   |   |   |--- class: 0
-|   |   |--- url_length >  14.50
-|   |   |   |--- num_dots <= 2.50
-|   |   |   |   |--- digit_ratio <= 0.05
-|   |   |   |   |   |--- host_length <= 16.50
-|   |   |   |   |   |   |--- host_length <= 9.50
-|   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- host_length >  9.50
-|   |   |   |   |   |   |   |--- path_length <= 2.50
-|   |   |   |   |   |   |   |   |--- entropy <= 3.35
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- entropy >  3.35
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- path_length >  2.50
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |--- host_length >  16.50
-|   |   |   |   |   |   |--- url_length <= 18.50
-|   |   |   |   |   |   |   |--- host_entropy <= 3.59
-|   |   |   |   |   |   |   |   |--- host_entropy <= 3.40
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- host_entropy >  3.40
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- host_entropy >  3.59
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- url_length >  18.50
-|   |   |   |   |   |   |   |--- entropy <= 3.33
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- entropy >  3.33
-|   |   |   |   |   |   |   |   |--- url_length <= 21.50
-|   |   |   |   |   |   |   |   |   |--- host_entropy <= 3.53
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- host_entropy >  3.53
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- url_length >  21.50
-|   |   |   |   |   |   |   |   |   |--- host_length <= 22.50
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- host_length >  22.50
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy <= 3.59
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy >  3.59
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |--- digit_ratio >  0.05
-|   |   |   |   |   |--- url_length <= 15.50
-|   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |--- url_length >  15.50
-|   |   |   |   |   |   |--- host_entropy <= 3.46
-|   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- host_entropy >  3.46
-|   |   |   |   |   |   |   |--- class: 1
-|   |   |   |--- num_dots >  2.50
-|   |   |   |   |--- host_length <= 20.50
-|   |   |   |   |   |--- class: 1
-|   |   |   |   |--- host_length >  20.50
-|   |   |   |   |   |--- class: 1
-|--- entropy >  3.64
-|   |--- host_length <= 21.50
-|   |   |--- entropy <= 4.62
-|   |   |   |--- suspicious_word_count <= 0.50
-|   |   |   |   |--- is_shortener <= 0.50
-|   |   |   |   |   |--- host_digits <= 0.50
-|   |   |   |   |   |   |--- host_hyphens <= 0.50
-|   |   |   |   |   |   |   |--- num_hyphens <= 2.50
-|   |   |   |   |   |   |   |   |--- special_char_count <= 0.50
-|   |   |   |   |   |   |   |   |   |--- path_depth <= 0.50
-|   |   |   |   |   |   |   |   |   |   |--- num_subdomains <= 0.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
-|   |   |   |   |   |   |   |   |   |   |--- num_subdomains >  0.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
-|   |   |   |   |   |   |   |   |   |--- path_depth >  0.50
-|   |   |   |   |   |   |   |   |   |   |--- host_length <= 11.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 8
-|   |   |   |   |   |   |   |   |   |   |--- host_length >  11.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 14
-|   |   |   |   |   |   |   |   |--- special_char_count >  0.50
-|   |   |   |   |   |   |   |   |   |--- has_at <= 0.50
-|   |   |   |   |   |   |   |   |   |   |--- path_length <= 6.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
-|   |   |   |   |   |   |   |   |   |   |--- path_length >  6.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
-|   |   |   |   |   |   |   |   |   |--- has_at >  0.50
-|   |   |   |   |   |   |   |   |   |   |--- digit_ratio <= 0.02
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- digit_ratio >  0.02
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- num_hyphens >  2.50
-|   |   |   |   |   |   |   |   |--- digit_count <= 17.50
-|   |   |   |   |   |   |   |   |   |--- num_dots <= 2.50
-|   |   |   |   |   |   |   |   |   |   |--- digit_ratio <= 0.16
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
-|   |   |   |   |   |   |   |   |   |   |--- digit_ratio >  0.16
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- num_dots >  2.50
-|   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- digit_count >  17.50
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- host_hyphens >  0.50
-|   |   |   |   |   |   |   |--- path_length <= 1.00
-|   |   |   |   |   |   |   |   |--- num_dots <= 1.50
-|   |   |   |   |   |   |   |   |   |--- url_length <= 20.50
-|   |   |   |   |   |   |   |   |   |   |--- host_length <= 15.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |   |--- host_length >  15.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
-|   |   |   |   |   |   |   |   |   |--- url_length >  20.50
-|   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- num_dots >  1.50
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- path_length >  1.00
-|   |   |   |   |   |   |   |   |--- special_char_count <= 0.50
-|   |   |   |   |   |   |   |   |   |--- path_depth <= 1.50
-|   |   |   |   |   |   |   |   |   |   |--- digit_ratio <= 0.19
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
-|   |   |   |   |   |   |   |   |   |   |--- digit_ratio >  0.19
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- path_depth >  1.50
-|   |   |   |   |   |   |   |   |   |   |--- num_subdomains <= 0.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
-|   |   |   |   |   |   |   |   |   |   |--- num_subdomains >  0.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- special_char_count >  0.50
-|   |   |   |   |   |   |   |   |   |--- entropy <= 4.36
-|   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- entropy >  4.36
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |--- host_digits >  0.50
-|   |   |   |   |   |   |--- url_length <= 16.50
-|   |   |   |   |   |   |   |--- host_digits <= 2.50
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- host_digits >  2.50
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |--- url_length >  16.50
-|   |   |   |   |   |   |   |--- num_dots <= 1.50
-|   |   |   |   |   |   |   |   |--- path_depth <= 0.50
-|   |   |   |   |   |   |   |   |   |--- host_entropy <= 3.72
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- host_entropy >  3.72
-|   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- path_depth >  0.50
-|   |   |   |   |   |   |   |   |   |--- digit_ratio <= 0.18
-|   |   |   |   |   |   |   |   |   |   |--- url_length <= 31.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- url_length >  31.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- digit_ratio >  0.18
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- num_dots >  1.50
-|   |   |   |   |   |   |   |   |--- host_length <= 11.50
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- host_length >  11.50
-|   |   |   |   |   |   |   |   |   |--- num_hyphens <= 2.50
-|   |   |   |   |   |   |   |   |   |   |--- special_char_count <= 0.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 8
-|   |   |   |   |   |   |   |   |   |   |--- special_char_count >  0.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |   |--- num_hyphens >  2.50
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |--- is_shortener >  0.50
-|   |   |   |   |   |--- path_length <= 7.50
-|   |   |   |   |   |   |--- entropy <= 3.68
-|   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- entropy >  3.68
-|   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |--- path_length >  7.50
-|   |   |   |   |   |   |--- host_length <= 9.00
-|   |   |   |   |   |   |   |--- entropy <= 3.89
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- entropy >  3.89
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- host_length >  9.00
-|   |   |   |   |   |   |   |--- class: 1
-|   |   |   |--- suspicious_word_count >  0.50
-|   |   |   |   |--- num_hyphens <= 3.50
-|   |   |   |   |   |--- num_dots <= 4.50
-|   |   |   |   |   |   |--- host_length <= 18.50
-|   |   |   |   |   |   |   |--- num_subdomains <= 0.50
-|   |   |   |   |   |   |   |   |--- host_digits <= 0.50
-|   |   |   |   |   |   |   |   |   |--- host_entropy <= 3.53
-|   |   |   |   |   |   |   |   |   |   |--- url_length <= 34.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
-|   |   |   |   |   |   |   |   |   |   |--- url_length >  34.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
-|   |   |   |   |   |   |   |   |   |--- host_entropy >  3.53
-|   |   |   |   |   |   |   |   |   |   |--- digit_ratio <= 0.06
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |   |   |--- digit_ratio >  0.06
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- host_digits >  0.50
-|   |   |   |   |   |   |   |   |   |--- path_length <= 18.50
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- path_length >  18.50
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- num_subdomains >  0.50
-|   |   |   |   |   |   |   |   |--- path_length <= 25.50
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- path_length >  25.50
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- host_length >  18.50
-|   |   |   |   |   |   |   |--- url_length <= 26.50
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- url_length >  26.50
-|   |   |   |   |   |   |   |   |--- path_length <= 39.50
-|   |   |   |   |   |   |   |   |   |--- path_depth <= 1.50
-|   |   |   |   |   |   |   |   |   |   |--- url_length <= 34.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- url_length >  34.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- path_depth >  1.50
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy <= 3.55
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy >  3.55
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |--- path_length >  39.50
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |--- num_dots >  4.50
-|   |   |   |   |   |   |--- path_depth <= 2.50
-|   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |--- path_depth >  2.50
-|   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |--- num_hyphens >  3.50
-|   |   |   |   |   |--- class: 0
-|   |   |--- entropy >  4.62
-|   |   |   |--- entropy <= 4.96
-|   |   |   |   |--- num_hyphens <= 5.50
-|   |   |   |   |   |--- special_char_count <= 3.50
-|   |   |   |   |   |   |--- num_hyphens <= 2.50
-|   |   |   |   |   |   |   |--- special_char_count <= 1.50
-|   |   |   |   |   |   |   |   |--- digit_ratio <= 0.22
-|   |   |   |   |   |   |   |   |   |--- digit_ratio <= 0.16
-|   |   |   |   |   |   |   |   |   |   |--- digit_ratio <= 0.06
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- digit_ratio >  0.06
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
-|   |   |   |   |   |   |   |   |   |--- digit_ratio >  0.16
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy <= 3.53
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy >  3.53
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- digit_ratio >  0.22
-|   |   |   |   |   |   |   |   |   |--- host_entropy <= 3.62
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy <= 3.45
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy >  3.45
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- host_entropy >  3.62
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- special_char_count >  1.50
-|   |   |   |   |   |   |   |   |--- url_length <= 73.50
-|   |   |   |   |   |   |   |   |   |--- digit_ratio <= 0.09
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- digit_ratio >  0.09
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- url_length >  73.50
-|   |   |   |   |   |   |   |   |   |--- entropy <= 4.70
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- entropy >  4.70
-|   |   |   |   |   |   |   |   |   |   |--- entropy <= 4.82
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- entropy >  4.82
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- num_hyphens >  2.50
-|   |   |   |   |   |   |   |--- digit_count <= 12.50
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- digit_count >  12.50
-|   |   |   |   |   |   |   |   |--- num_subdomains <= 0.50
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- num_subdomains >  0.50
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |--- special_char_count >  3.50
-|   |   |   |   |   |   |--- digit_count <= 13.50
-|   |   |   |   |   |   |   |--- host_length <= 10.50
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- host_length >  10.50
-|   |   |   |   |   |   |   |   |--- path_depth <= 3.50
-|   |   |   |   |   |   |   |   |   |--- query_length <= 30.50
-|   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |   |--- query_length >  30.50
-|   |   |   |   |   |   |   |   |   |   |--- special_char_count <= 7.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- special_char_count >  7.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- path_depth >  3.50
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- digit_count >  13.50
-|   |   |   |   |   |   |   |--- suspicious_word_count <= 0.50
-|   |   |   |   |   |   |   |   |--- digit_ratio <= 0.24
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- digit_ratio >  0.24
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- suspicious_word_count >  0.50
-|   |   |   |   |   |   |   |   |--- num_params <= 2.50
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- num_params >  2.50
-|   |   |   |   |   |   |   |   |   |--- digit_ratio <= 0.21
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- digit_ratio >  0.21
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |--- num_hyphens >  5.50
-|   |   |   |   |   |--- digit_count <= 17.50
+|   |   |   |   |   |--- digit_count >  5.50
 |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |--- digit_count >  17.50
-|   |   |   |   |   |   |--- class: 1
-|   |   |   |--- entropy >  4.96
-|   |   |   |   |--- path_length <= 28.50
-|   |   |   |   |   |--- query_length <= 86.50
-|   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |--- query_length >  86.50
-|   |   |   |   |   |   |--- query_length <= 154.50
+|   |   |--- longest_token >  19.50
+|   |   |   |--- digit_ratio <= 0.00
+|   |   |   |   |--- class: 0
+|   |   |   |--- digit_ratio >  0.00
+|   |   |   |   |--- longest_token <= 25.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- longest_token >  25.50
+|   |   |   |   |   |--- letter_ratio <= 0.76
+|   |   |   |   |   |   |--- suspicious_tld <= 0.50
 |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- query_length >  154.50
-|   |   |   |   |   |   |   |--- entropy <= 5.21
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- entropy >  5.21
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |--- path_length >  28.50
-|   |   |   |   |   |--- host_length <= 12.50
-|   |   |   |   |   |   |--- query_length <= 13.00
+|   |   |   |   |   |   |--- suspicious_tld >  0.50
 |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- query_length >  13.00
-|   |   |   |   |   |   |   |--- query_length <= 69.50
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- query_length >  69.50
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |--- host_length >  12.50
-|   |   |   |   |   |   |--- path_length <= 129.50
-|   |   |   |   |   |   |   |--- url_length <= 144.00
-|   |   |   |   |   |   |   |   |--- host_entropy <= 3.00
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- host_entropy >  3.00
-|   |   |   |   |   |   |   |   |   |--- host_entropy <= 3.33
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- host_entropy >  3.33
-|   |   |   |   |   |   |   |   |   |   |--- host_length <= 18.50
+|   |   |   |   |   |--- letter_ratio >  0.76
+|   |   |   |   |   |   |--- ext_html <= 0.50
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- ext_html >  0.50
+|   |   |   |   |   |   |   |--- class: 1
+|   |--- suspicious_word_count >  0.50
+|   |   |--- ext_php <= 0.50
+|   |   |   |--- url_length <= 184.50
+|   |   |   |   |--- num_hyphens <= 6.50
+|   |   |   |   |   |--- free_hosting <= 0.50
+|   |   |   |   |   |   |--- suspicious_tld <= 0.50
+|   |   |   |   |   |   |   |--- brand_outside_domain <= 0.50
+|   |   |   |   |   |   |   |   |--- letter_ratio <= 0.92
+|   |   |   |   |   |   |   |   |   |--- num_hyphens <= 3.50
+|   |   |   |   |   |   |   |   |   |   |--- special_char_count <= 1.50
 |   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- host_length >  18.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- url_length >  144.00
-|   |   |   |   |   |   |   |   |--- host_digits <= 0.50
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- host_digits >  0.50
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- path_length >  129.50
-|   |   |   |   |   |   |   |--- class: 1
-|   |--- host_length >  21.50
-|   |   |--- num_dots <= 1.50
-|   |   |   |--- path_length <= 1.00
-|   |   |   |   |--- num_hyphens <= 0.50
-|   |   |   |   |   |--- entropy <= 3.85
-|   |   |   |   |   |   |--- host_length <= 24.50
-|   |   |   |   |   |   |   |--- host_entropy <= 3.75
-|   |   |   |   |   |   |   |   |--- host_entropy <= 3.70
-|   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- host_entropy >  3.70
-|   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- host_entropy >  3.75
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |--- host_length >  24.50
-|   |   |   |   |   |   |   |--- host_entropy <= 3.72
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- host_entropy >  3.72
-|   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |--- entropy >  3.85
-|   |   |   |   |   |   |--- host_length <= 25.50
-|   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |--- host_length >  25.50
-|   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |--- num_hyphens >  0.50
-|   |   |   |   |   |--- suspicious_word_count <= 0.50
-|   |   |   |   |   |   |--- entropy <= 4.01
-|   |   |   |   |   |   |   |--- num_hyphens <= 1.50
-|   |   |   |   |   |   |   |   |--- entropy <= 3.79
-|   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- entropy >  3.79
-|   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |--- num_hyphens >  1.50
-|   |   |   |   |   |   |   |   |--- host_entropy <= 3.76
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- host_entropy >  3.76
-|   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |--- entropy >  4.01
-|   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |--- suspicious_word_count >  0.50
-|   |   |   |   |   |   |--- class: 1
-|   |   |   |--- path_length >  1.00
-|   |   |   |   |--- entropy <= 4.46
-|   |   |   |   |   |--- num_hyphens <= 2.50
-|   |   |   |   |   |   |--- host_hyphens <= 0.50
-|   |   |   |   |   |   |   |--- path_depth <= 1.50
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- path_depth >  1.50
-|   |   |   |   |   |   |   |   |--- digit_ratio <= 0.01
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- digit_ratio >  0.01
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- host_hyphens >  0.50
-|   |   |   |   |   |   |   |--- url_length <= 38.50
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- url_length >  38.50
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |--- num_hyphens >  2.50
-|   |   |   |   |   |   |--- class: 1
-|   |   |   |   |--- entropy >  4.46
-|   |   |   |   |   |--- path_depth <= 3.50
-|   |   |   |   |   |   |--- entropy <= 4.74
-|   |   |   |   |   |   |   |--- host_length <= 23.50
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- host_length >  23.50
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- entropy >  4.74
-|   |   |   |   |   |   |   |--- entropy <= 5.10
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- entropy >  5.10
-|   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |--- path_depth >  3.50
-|   |   |   |   |   |   |--- class: 1
-|   |   |--- num_dots >  1.50
-|   |   |   |--- entropy <= 5.82
-|   |   |   |   |--- host_hyphens <= 0.50
-|   |   |   |   |   |--- host_digits <= 0.50
-|   |   |   |   |   |   |--- num_hyphens <= 4.50
-|   |   |   |   |   |   |   |--- suspicious_word_count <= 0.50
-|   |   |   |   |   |   |   |   |--- entropy <= 4.60
-|   |   |   |   |   |   |   |   |   |--- num_hyphens <= 1.50
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy <= 3.79
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy >  3.79
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
-|   |   |   |   |   |   |   |   |   |--- num_hyphens >  1.50
-|   |   |   |   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |   |   |   |--- entropy >  4.60
-|   |   |   |   |   |   |   |   |   |--- path_depth <= 4.50
-|   |   |   |   |   |   |   |   |   |   |--- path_length <= 29.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- path_length >  29.50
+|   |   |   |   |   |   |   |   |   |   |--- special_char_count >  1.50
 |   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |   |--- path_depth >  4.50
+|   |   |   |   |   |   |   |   |   |--- num_hyphens >  3.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- letter_ratio >  0.92
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- brand_outside_domain >  0.50
+|   |   |   |   |   |   |   |   |--- suspicious_word_count <= 1.50
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- suspicious_word_count >  1.50
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- suspicious_tld >  0.50
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- free_hosting >  0.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- num_hyphens >  6.50
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- url_length >  184.50
+|   |   |   |   |--- class: 1
+|   |   |--- ext_php >  0.50
+|   |   |   |--- query_length <= 39.50
+|   |   |   |   |--- class: 1
+|   |   |   |--- query_length >  39.50
+|   |   |   |   |--- num_subdomains <= 0.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- num_subdomains >  0.50
+|   |   |   |   |   |--- class: 1
+|--- host_length >  21.50
+|   |--- host_digits <= 0.50
+|   |   |--- suspicious_word_count <= 0.50
+|   |   |   |--- free_hosting <= 0.50
+|   |   |   |   |--- longest_token <= 29.50
+|   |   |   |   |   |--- host_hyphens <= 0.50
+|   |   |   |   |   |   |--- suspicious_tld <= 0.50
+|   |   |   |   |   |   |   |--- num_hyphens <= 1.50
+|   |   |   |   |   |   |   |   |--- num_subdomains <= 0.50
+|   |   |   |   |   |   |   |   |   |--- path_depth <= 1.50
+|   |   |   |   |   |   |   |   |   |   |--- ext_html <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- ext_html >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- path_depth >  1.50
+|   |   |   |   |   |   |   |   |   |   |--- ext_html <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- ext_html >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- num_subdomains >  0.50
+|   |   |   |   |   |   |   |   |   |--- path_length <= 7.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- path_length >  7.50
+|   |   |   |   |   |   |   |   |   |   |--- brand_outside_domain <= 0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- brand_outside_domain >  0.50
+|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num_hyphens >  1.50
+|   |   |   |   |   |   |   |   |--- digit_ratio <= 0.22
+|   |   |   |   |   |   |   |   |   |--- num_hyphens <= 3.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |   |--- num_hyphens >  3.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- digit_ratio >  0.22
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- suspicious_tld >  0.50
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- host_hyphens >  0.50
+|   |   |   |   |   |   |--- suspicious_tld <= 0.50
+|   |   |   |   |   |   |   |--- ext_html <= 0.50
+|   |   |   |   |   |   |   |   |--- host_length <= 26.50
+|   |   |   |   |   |   |   |   |   |--- num_hyphens <= 3.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- num_hyphens >  3.50
+|   |   |   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |   |   |--- host_length >  26.50
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- ext_html >  0.50
+|   |   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- suspicious_tld >  0.50
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- longest_token >  29.50
+|   |   |   |   |   |--- entropy <= 4.52
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- entropy >  4.52
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |--- free_hosting >  0.50
+|   |   |   |   |--- path_depth <= 2.50
+|   |   |   |   |   |--- digit_ratio <= 0.13
+|   |   |   |   |   |   |--- letter_ratio <= 0.91
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- letter_ratio >  0.91
+|   |   |   |   |   |   |   |--- num_subdomains <= 0.50
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |--- num_subdomains >  0.50
+|   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- digit_ratio >  0.13
+|   |   |   |   |   |   |--- digit_count <= 8.50
+|   |   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |   |--- digit_count >  8.50
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- path_depth >  2.50
+|   |   |   |   |   |--- ext_html <= 0.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- ext_html >  0.50
+|   |   |   |   |   |   |--- class: 0
+|   |   |--- suspicious_word_count >  0.50
+|   |   |   |--- path_length <= 12.50
+|   |   |   |   |--- letter_ratio <= 0.95
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- letter_ratio >  0.95
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- path_length >  12.50
+|   |   |   |   |--- ext_php <= 0.50
+|   |   |   |   |   |--- longest_token <= 32.50
+|   |   |   |   |   |   |--- num_hyphens <= 3.50
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |--- num_hyphens >  3.50
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- longest_token >  32.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- ext_php >  0.50
+|   |   |   |   |   |--- class: 1
+|   |--- host_digits >  0.50
+|   |   |--- free_hosting <= 0.50
+|   |   |   |--- suspicious_tld <= 0.50
+|   |   |   |   |--- num_subdomains <= 4.50
+|   |   |   |   |   |--- host_entropy <= 4.01
+|   |   |   |   |   |   |--- longest_token <= 28.50
+|   |   |   |   |   |   |   |--- suspicious_word_count <= 0.50
+|   |   |   |   |   |   |   |   |--- path_length <= 3.50
+|   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |--- path_length >  3.50
+|   |   |   |   |   |   |   |   |   |--- letter_ratio <= 0.75
+|   |   |   |   |   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |   |   |   |   |--- letter_ratio >  0.75
 |   |   |   |   |   |   |   |   |   |   |--- class: 1
 |   |   |   |   |   |   |   |--- suspicious_word_count >  0.50
-|   |   |   |   |   |   |   |   |--- num_subdomains <= 2.50
-|   |   |   |   |   |   |   |   |   |--- path_depth <= 2.50
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy <= 3.61
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- host_entropy >  3.61
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
-|   |   |   |   |   |   |   |   |   |--- path_depth >  2.50
-|   |   |   |   |   |   |   |   |   |   |--- digit_ratio <= 0.01
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- digit_ratio >  0.01
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
-|   |   |   |   |   |   |   |   |--- num_subdomains >  2.50
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- num_hyphens >  4.50
-|   |   |   |   |   |   |   |--- class: 0
-|   |   |   |   |   |--- host_digits >  0.50
-|   |   |   |   |   |   |--- num_subdomains <= 5.50
-|   |   |   |   |   |   |   |--- num_dots <= 5.50
-|   |   |   |   |   |   |   |   |--- num_hyphens <= 1.50
-|   |   |   |   |   |   |   |   |   |--- host_digits <= 2.50
-|   |   |   |   |   |   |   |   |   |   |--- entropy <= 4.05
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
-|   |   |   |   |   |   |   |   |   |   |--- entropy >  4.05
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
-|   |   |   |   |   |   |   |   |   |--- host_digits >  2.50
-|   |   |   |   |   |   |   |   |   |   |--- query_length <= 32.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
-|   |   |   |   |   |   |   |   |   |   |--- query_length >  32.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- num_hyphens >  1.50
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- num_dots >  5.50
 |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- num_subdomains >  5.50
+|   |   |   |   |   |   |--- longest_token >  28.50
 |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |--- host_hyphens >  0.50
-|   |   |   |   |   |--- num_subdomains <= 3.50
-|   |   |   |   |   |   |--- host_digits <= 0.50
-|   |   |   |   |   |   |   |--- host_length <= 25.50
-|   |   |   |   |   |   |   |   |--- suspicious_word_count <= 0.50
-|   |   |   |   |   |   |   |   |   |--- entropy <= 4.59
-|   |   |   |   |   |   |   |   |   |   |--- entropy <= 4.13
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
-|   |   |   |   |   |   |   |   |   |   |--- entropy >  4.13
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- entropy >  4.59
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- suspicious_word_count >  0.50
-|   |   |   |   |   |   |   |   |   |--- host_length <= 23.50
-|   |   |   |   |   |   |   |   |   |   |--- url_length <= 41.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- url_length >  41.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- host_length >  23.50
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |--- host_length >  25.50
-|   |   |   |   |   |   |   |   |--- path_depth <= 2.50
-|   |   |   |   |   |   |   |   |   |--- num_dots <= 3.50
-|   |   |   |   |   |   |   |   |   |   |--- suspicious_word_count <= 0.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
-|   |   |   |   |   |   |   |   |   |   |--- suspicious_word_count >  0.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
-|   |   |   |   |   |   |   |   |   |--- num_dots >  3.50
-|   |   |   |   |   |   |   |   |   |   |--- path_length <= 17.50
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |   |   |--- path_length >  17.50
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- path_depth >  2.50
-|   |   |   |   |   |   |   |   |   |--- path_depth <= 3.50
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- path_depth >  3.50
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- host_digits >  0.50
-|   |   |   |   |   |   |   |--- digit_count <= 40.50
-|   |   |   |   |   |   |   |   |--- host_entropy <= 3.91
-|   |   |   |   |   |   |   |   |   |--- path_length <= 33.50
-|   |   |   |   |   |   |   |   |   |   |--- digit_ratio <= 0.07
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |   |   |--- digit_ratio >  0.07
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
-|   |   |   |   |   |   |   |   |   |--- path_length >  33.50
-|   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- host_entropy >  3.91
-|   |   |   |   |   |   |   |   |   |--- digit_count <= 1.50
-|   |   |   |   |   |   |   |   |   |   |--- entropy <= 4.15
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |   |--- entropy >  4.15
-|   |   |   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |   |--- digit_count >  1.50
-|   |   |   |   |   |   |   |   |   |   |--- digit_ratio <= 0.17
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
-|   |   |   |   |   |   |   |   |   |   |--- digit_ratio >  0.17
-|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
-|   |   |   |   |   |   |   |--- digit_count >  40.50
-|   |   |   |   |   |   |   |   |--- entropy <= 4.93
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |   |   |--- entropy >  4.93
-|   |   |   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |--- num_subdomains >  3.50
-|   |   |   |   |   |   |--- num_dots <= 6.50
-|   |   |   |   |   |   |   |--- class: 1
-|   |   |   |   |   |   |--- num_dots >  6.50
-|   |   |   |   |   |   |   |--- class: 0
-|   |   |   |--- entropy >  5.82
-|   |   |   |   |--- class: 0
+|   |   |   |   |   |--- host_entropy >  4.01
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- num_subdomains >  4.50
+|   |   |   |   |   |--- host_entropy <= 4.08
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- host_entropy >  4.08
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |--- suspicious_tld >  0.50
+|   |   |   |   |--- class: 1
+|   |   |--- free_hosting >  0.50
+|   |   |   |--- path_depth <= 2.50
+|   |   |   |   |--- class: 1
+|   |   |   |--- path_depth >  2.50
+|   |   |   |   |--- num_subdomains <= 0.50
+|   |   |   |   |   |--- ext_html <= 0.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- ext_html >  0.50
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- num_subdomains >  0.50
+|   |   |   |   |   |--- class: 1

@@ -1,4 +1,4 @@
-"""Run the whole pipeline: collect -> integrate -> features -> analysis -> train/evaluate.
+"""Run the whole pipeline: collect -> integrate -> features -> analysis -> experiments -> final model.
 
     python run_all.py              # everything
     python run_all.py --no-collect # reuse the files already in data/raw
@@ -6,11 +6,12 @@
 import sys
 import time
 
-from src import analysis, collect, features, integrate, train_eval
+from src import analysis, collect, experiments, features, integrate, train_eval
 
 steps = [("Collect URLs", collect.main), ("Integrate sources", integrate.main),
          ("Extract features", features.main), ("Analyse features", analysis.main),
-         ("Train and evaluate", train_eval.main)]
+         ("Improvement experiments", experiments.main),
+         ("Train and evaluate final model", train_eval.main)]
 if "--no-collect" in sys.argv:
     steps = steps[1:]
 

@@ -64,10 +64,12 @@ def best_split(x: np.ndarray, y: np.ndarray, kind: str) -> tuple[float, float]:
 
 
 def main():
-    df = pd.read_csv(PROCESSED / "features.csv", keep_default_na=False)
-    train = df[df["role"] == "train"]
+    from .dataset import FINAL, build_train, load_features  # late import avoids a cycle
+    train = build_train(load_features(), FINAL)
     y = train["label"].to_numpy()
-    lines = ["# Feature analysis (training set)", "",
+    lines = ["# Feature analysis", "",
+             "This report analyses the training set used by the final model, after all the "
+             "improvements in the experiments section below.", "",
              f"{len(train):,} training URLs, {int(y.sum()):,} phishing and {int((1 - y).sum()):,} legitimate.", ""]
 
     # --- 1. Distributions per class ------------------------------------------
@@ -166,10 +168,11 @@ def main():
         "![correlation](figures/correlation_heatmap.png)", "",
         "## Shortcut check: share of URLs with a path or query", "",
         "Tranco and URL-Phish list legitimate sites as bare domains or homepages, while the "
-        "Kaggle benign URLs are mostly deep links. If legitimate URLs rarely had a path, a tree "
-        "could learn 'has a path means phishing', which fails on real traffic. The tables below "
-        "show how balanced this is, and the host-only model in the results report checks how "
-        "much performance depends on the path.", "",
+        "Kaggle and Common Crawl URLs are mostly deep links. If legitimate URLs rarely had a "
+        "path, a tree could learn 'has a path means phishing', which fails on real traffic. "
+        "The final training set samples legitimate URLs so the two classes have a path equally "
+        "often. The host-only model in the results report checks how much performance depends "
+        "on the path.", "",
         md_table(shortcut), "",
         md_table(by_source), "",
         "Per-feature means and medians by class are in reports/feature_summary.csv.", ""]

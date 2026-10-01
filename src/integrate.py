@@ -18,21 +18,37 @@ from collections import Counter
 import numpy as np
 import pandas as pd
 
-from .config import (LIVE, MANUAL, PHISHING_DATABASE_SAMPLE, PROCESSED, RAW,
-                     REPORTS, SEED, LEGIT_TEST_FRACTION)
-from .urlutils import clean_url, normalize_key, registered_domain
+import re
+from urllib.parse import urlsplit
+
+from .config import (LEGIT_TEST_FRACTION, LEGIT_VAL_FRACTION, LIVE, MANUAL,
+                     PHISHING_DATABASE_SAMPLE, PROCESSED, RAW, REPORTS, SEED,
+                     TRANCO_TRAIN_CANDIDATES)
+from .urlutils import clean_url, normalize_key, registered_domain, site_key
 
 # When one URL appears in several sources, the raw form kept is the one from the
 # earliest source in this list. Phishing sources come first.
 SOURCE_PRIORITY = ["phishing_database", "url_phish", "iscx", "phishtank",
-                   "openphish", "phishunt", "kaggle_benign", "tranco"]
+                   "openphish", "phishunt", "kaggle_benign", "commoncrawl", "tranco"]
 # Legitimate sources that are split by domain into training and a held-back test pool
-HOLDOUT_SOURCES = {"tranco", "kaggle_benign"}
+HOLDOUT_SOURCES = {"tranco", "kaggle_benign", "commoncrawl"}
+
+# A legitimate-labelled URL is flagged as a suspect label when it matches a typical phishing
+# pattern, or its domain also hosts reported phishing, and it is not on a popular domain.
+SUSPECT_PATTERN = re.compile(
+    r"webscr|cmd=_|sign-?in|log-?in|logon|verif|account|update|secure|banking|password|"
+    r"wp-(?:includes|content|admin)/.*\.php|\.php\?.{40,}")
+POPULAR_RANK = 100_000
 TEST_SOURCES = {"openphish", "phishunt", "phishtank"}
 
 
-def _frame(urls, label, source):
-    return pd.DataFrame({"url_raw": list(urls), "label": label, "source": source})
+def _frame(urls, label, source, seen=""):
+    return pd.DataFrame({"url_raw": list(urls), "label": label, "source": source, "seen": seen})
+
+
+def _hash01(text: str) -> float:
+    """Deterministic pseudo-random number in [0, 1) from a string."""
+    return int(hashlib.md5(text.encode()).hexdigest()[:8], 16) / 0x100000000
 
 
 def _read_lines(path):
@@ -92,10 +108,16 @@ def load_sources(rng) -> pd.DataFrame:
         df = pd.read_csv(path, usecols=["url"], encoding_errors="replace")
         frames.append(_frame(df["url"], 1, "phishtank"))
 
-    # Live text feeds: every snapshot collected so far
+    # Common Crawl sample: current pages; filtered to Tranco domains later
+    cc = RAW / "commoncrawl_urls.txt"
+    if cc.exists():
+        frames.append(_frame(_read_lines(cc), 0, "commoncrawl"))
+
+    # Live text feeds: every snapshot collected so far, tagged with the snapshot date
     for src in ("openphish", "phishunt"):
         for path in sorted(LIVE.glob(f"{src}_*.txt")):
-            frames.append(_frame(_read_lines(path), 1, src))
+            d = path.stem.split("_")[1]
+            frames.append(_frame(_read_lines(path), 1, src, seen=f"{d[:4]}-{d[4:6]}-{d[6:]}"))
 
     return pd.concat(frames, ignore_index=True)
 
@@ -153,6 +175,7 @@ def main():
     df["prio"] = df["source"].map({s: i for i, s in enumerate(SOURCE_PRIORITY)})
     df = df.sort_values(["key", "prio"])
     df["is_test_src"] = df["source"].isin(TEST_SOURCES)
+    df["seen"] = df["seen"].replace("", "9999")
     g = df.groupby("key", sort=False)
     merged = pd.DataFrame({
         "url": g["url"].first(),
@@ -160,6 +183,7 @@ def main():
         "label_max": g["label"].max(),
         "n_sources": g["source"].nunique(),
         "only_test_sources": g["is_test_src"].all(),
+        "seen": g["seen"].min().replace("9999", ""),  # first snapshot the URL appeared in
     })
     multi_src = merged.index[merged["n_sources"] > 1]
     src_lists = (df[df["key"].isin(multi_src)].groupby("key")["source"]
@@ -184,42 +208,77 @@ def main():
     n_test_overlap = int(((merged["n_sources"] > 1) & ~merged["only_test_sources"]
                           & merged["sources"].str.contains("openphish|phishunt|phishtank")).sum())
 
-    # Hold back part of the legitimate URLs for the realistic-imbalance test. The split is by
-    # registered domain, so no domain has URLs on both sides (e.g. all youtube.com URLs go
-    # to the same side).
     merged["reg_domain"] = merged["url"].map(registered_domain)
-    legit_only = merged["sources"].str.split("|").map(lambda s: set(s) <= HOLDOUT_SOURCES)
-    in_holdout = merged["reg_domain"].map(
-        lambda d: int(hashlib.md5(f"{SEED}:{d}".encode()).hexdigest()[:8], 16) / 0xFFFFFFFF
-        < LEGIT_TEST_FRACTION)
-    held = legit_only & in_holdout
-    merged.loc[held, "role"] = "test_legit_pool"
-    # Any other training URL on a held-back domain would leak that domain into training
+
+    # --- Popularity: Tranco rank of each registered domain ---------------------
+    t = pd.read_csv(RAW / "tranco_top1m.csv.zip", header=None, names=["rank", "domain"])
+    t["reg"] = ("https://" + t["domain"].astype(str) + "/").map(registered_domain)
+    rank = t.groupby("reg")["rank"].min()
+    merged["tranco_rank"] = merged["reg_domain"].map(rank).fillna(0).astype(int)
+
+    # Common Crawl covers the whole web, including spam and abandoned sites. Keep only pages
+    # on domains in the Tranco top 1M, which are very likely legitimate.
+    cc_only = merged["sources"] == "commoncrawl"
+    cc_drop = cc_only & (merged["tranco_rank"] == 0)
+    cc_dropped, cc_kept = int(cc_drop.sum()), int((cc_only & ~cc_drop).sum())
+    merged = merged[~cc_drop]
+
+    # --- Suspect legitimate labels (used by the label-cleaning experiment) ----
+    phish_domains = set(merged.loc[merged["label"] == 1, "reg_domain"])
+    popular = merged["tranco_rank"].between(1, POPULAR_RANK)
+    legit = merged["label"] == 0
+    by_domain = legit & merged["reg_domain"].isin(phish_domains) & ~popular
+    by_pattern = legit & merged["url"].str.lower().str.contains(SUSPECT_PATTERN) & ~popular
+    merged["suspect_reason"] = ""
+    merged.loc[by_pattern, "suspect_reason"] = "phishing_pattern"
+    merged.loc[by_domain, "suspect_reason"] = "domain_hosts_phishing"
+    suspects = (merged[merged["suspect_reason"] != ""].groupby(["suspect_reason", "sources"])
+                .size().reset_index(name="urls").sort_values("urls", ascending=False).head(12))
+
+    # --- Hold back legitimate domains for validation and testing --------------
+    # Split by registered domain, so no domain has URLs on both sides (all youtube.com URLs
+    # go to the same side). Held-back domains are split again into a validation pool (used
+    # only to choose the decision threshold) and the final test pool.
+    legit_only = merged["sources"].str.split("|").map(lambda x: set(x) <= HOLDOUT_SOURCES)
+    u1 = merged["reg_domain"].map(lambda d: _hash01(f"{SEED}:{d}"))
+    u2 = merged["reg_domain"].map(lambda d: _hash01(f"val{SEED}:{d}"))
+    held = legit_only & (u1 < LEGIT_TEST_FRACTION)
+    merged.loc[held & (u2 < LEGIT_VAL_FRACTION), "role"] = "val_legit_pool"
+    merged.loc[held & (u2 >= LEGIT_VAL_FRACTION), "role"] = "test_legit_pool"
+    # Any other legitimate training URL on a held-back domain would leak that domain
     held_domains = set(merged.loc[held, "reg_domain"])
     leak = (merged["role"] == "train") & merged["reg_domain"].isin(held_domains) & (merged["label"] == 0)
     merged = merged[~leak]
 
-    # --- Balanced training sample --------------------------------------------
-    train = merged[merged["role"] == "train"]
-    phish, legit = train[train["label"] == 1], train[train["label"] == 0]
-    n = min(len(phish), len(legit))
-    train = pd.concat([phish.sample(n, random_state=SEED), legit.sample(n, random_state=SEED)])
+    # --- Training candidates --------------------------------------------------
+    # All phishing, and all legitimate URLs except Tranco homepages, which are sampled to keep
+    # the file small. pool_weight restores Tranco's true share when an experiment samples
+    # "as the sources come".
+    train = merged[merged["role"] == "train"].copy()
+    tranco_only = (train["sources"] == "tranco") & (train["label"] == 0)
+    n_tranco = int(tranco_only.sum())
+    keep_tranco = train[tranco_only].sample(min(TRANCO_TRAIN_CANDIDATES, n_tranco), random_state=SEED)
+    train = pd.concat([train[~tranco_only], keep_tranco])
+    train["pool_weight"] = np.where(train["sources"] == "tranco", n_tranco / max(len(keep_tranco), 1), 1.0)
 
     test_phish = merged[(merged["role"] == "test") & (merged["label"] == 1)]
-    pool = merged[merged["role"] == "test_legit_pool"]
-    need = int(len(test_phish) * max(100, 1) * 1.5)  # room to resample at 1:100
-    pool = pool.sample(min(need, len(pool)), random_state=SEED)
+    pools = []
+    for role, size in (("test_legit_pool", int(len(test_phish) * 100 * 1.5)), ("val_legit_pool", 120_000)):
+        p = merged[merged["role"] == role]
+        pools.append(p.sample(min(size, len(p)), random_state=SEED))
+    final = pd.concat([train, test_phish] + pools, ignore_index=True)
+    final["pool_weight"] = final["pool_weight"].fillna(1.0)
 
-    final = pd.concat([train, test_phish, pool], ignore_index=True)
-
-    # Legit test URLs must not share a registered domain with any training URL
+    # Held-back URLs must not share a registered domain with any training URL
     train_domains = set(final.loc[final["role"] == "train", "reg_domain"])
-    pool_overlap = (final["role"] == "test_legit_pool") & final["reg_domain"].isin(train_domains)
+    pool_overlap = final["role"].str.endswith("legit_pool") & final["reg_domain"].isin(train_domains)
     final = final[~pool_overlap]
     tp = final["role"] == "test"
     test_domain_overlap = int(final.loc[tp, "reg_domain"].isin(train_domains).sum())
 
-    final = final[["url", "key", "reg_domain", "label", "role", "sources", "n_sources"]]
+    final["site"] = final["url"].map(lambda u: site_key((urlsplit(u).hostname or "").rstrip(".")))
+    final = final[["url", "key", "reg_domain", "site", "label", "role", "sources", "n_sources",
+                   "seen", "tranco_rank", "suspect_reason", "pool_weight"]]
     final.to_csv(PROCESSED / "integrated.csv", index=False)
 
     # --- Report ---------------------------------------------------------------
@@ -251,10 +310,22 @@ def main():
         f"- Held-back legitimate URLs removed because their domain appears in training: {int(pool_overlap.sum()):,}",
         f"- Live phishing test URLs whose registered domain also appears in training (kept, e.g. shared hosting): {test_domain_overlap:,}", "",
         f"- Legitimate URLs dropped from training because their domain was held back for testing: {int(leak.sum()):,}", "",
-        "Held-back legitimate test pool by source:", "",
-        md_table(final.loc[final["role"] == "test_legit_pool", "sources"].value_counts()
-                 .rename_axis("sources").reset_index(name="urls")), "",
-        "## 7. Final dataset", "",
+        "Held-back legitimate URLs by source. The validation pool is only used to choose the "
+        "decision threshold; the test pool is the final test.", "",
+        md_table(final[final["role"].str.endswith("legit_pool")].groupby(["role", "sources"]).size()
+                 .reset_index(name="urls")), "",
+        "Live phishing test URLs by the snapshot they first appeared in:", "",
+        md_table(final[final["role"] == "test"].groupby("seen").size().reset_index(name="urls")), "",
+        "## 7. Common Crawl filtering", "",
+        f"{cc_kept:,} Common Crawl URLs were kept and {cc_dropped:,} dropped because their domain "
+        "is not in the Tranco top 1M. The kept URLs are current pages on established sites, used "
+        "as legitimate deep links.", "",
+        "## 8. Suspect legitimate labels", "",
+        "Legitimate-labelled URLs on domains outside the Tranco top 100k are flagged when they "
+        "match a typical phishing pattern (login, verify, webscr, WordPress PHP files and similar) "
+        "or when their domain also hosts reported phishing. The label-cleaning experiment drops them.", "",
+        md_table(suspects) if len(suspects) else "None.", "",
+        "## 9. Final dataset", "",
         md_table(final.groupby(["role", "label"]).size().reset_index(name="rows")), ""]
     (REPORTS / "integration_report.md").write_text("\n".join(report), encoding="utf-8")
     print(final.groupby(["role", "label"]).size())

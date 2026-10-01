@@ -76,8 +76,9 @@ def normalize_key(url: str) -> str:
 
 @lru_cache(maxsize=None)
 def split_host(host: str) -> tuple[str, str, str]:
-    """(subdomain, registered_domain, suffix). Private suffixes such as
-    weebly.com count as public suffixes, so each weebly site is its own domain."""
+    """(subdomain, registered_domain, suffix). Private suffixes in the Public Suffix List,
+    such as vercel.app or github.io, count as public suffixes, so each site on them is its
+    own domain. Platforms not on that list (weebly.com, godaddysites.com) are one domain."""
     if is_ip(host):
         return "", host, ""
     ext = _EXTRACT(host)
@@ -87,3 +88,31 @@ def split_host(host: str) -> tuple[str, str, str]:
 
 def registered_domain(url: str) -> str:
     return split_host((urlsplit(url).hostname or "").rstrip("."))[1]
+
+
+# Free website builders and hosting platforms. Anyone can create a site on these in minutes,
+# and much of today's phishing lives on them.
+FREE_HOSTING = (
+    "weebly.com", "weeblysite.com", "wixsite.com", "wixstudio.com", "vercel.app", "netlify.app",
+    "github.io", "gitlab.io", "godaddysites.com", "000webhostapp.com", "firebaseapp.com",
+    "web.app", "pages.dev", "workers.dev", "blogspot.com", "glitch.me", "herokuapp.com",
+    "repl.co", "replit.app", "replit.dev", "wordpress.com", "square.site", "webflow.io",
+    "ngrok-free.app", "ngrok.io", "ngrok.app", "duckdns.org", "azurewebsites.net", "appspot.com",
+    "r2.dev", "ipfs.io", "dweb.link", "myshopify.com", "jimdosite.com", "yolasite.com",
+    "mystrikingly.com", "carrd.co", "bubbleapps.io", "framer.app", "framer.website",
+    "gitbook.io", "notion.site", "webnode.page", "site123.me", "wcomhost.com", "yzz.me",
+    "sites.google.com", "storage.googleapis.com", "surge.sh", "onrender.com", "fly.dev",
+    "translate.goog", "ukit.me", "tilda.ws", "hpage.com", "mobirisesite.com", "teachable.com",
+)
+
+
+def on_free_hosting(host: str) -> bool:
+    return any(host == s or host.endswith("." + s) for s in FREE_HOSTING)
+
+
+def site_key(host: str) -> str:
+    """The unit used when capping URLs per site. Normally the registered domain, but on a
+    shared hosting platform each hosted site counts separately (abc.weebly.com and
+    xyz.weebly.com are different sites run by different people)."""
+    host = host.removeprefix("www.")
+    return host if on_free_hosting(host) else split_host(host)[1]
