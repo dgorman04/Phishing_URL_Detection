@@ -1,0 +1,17 @@
+# Downloaded and generated data (rebuilt by `python run_all.py`)
+data/raw/
+data/processed/
+*.part
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
